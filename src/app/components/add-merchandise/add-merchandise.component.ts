@@ -16,7 +16,7 @@ export class AddMerchandiseComponent implements OnInit {
   admissionDate: new Date,
   id:0,
   modificationDate:new Date,
-   idUser:{id:2, name:"Juan Eslava",age:27, admissionDate:new Date("2021-03-01"), idAppointment:{id:2, description:"Manager"}}}
+   idUser:{id:1, name:"Juan Eslava",age:27, admissionDate:new Date("2021-03-01"), idAppointment:{id:1, description:"Maneger"}}}
 
   constructor(public MerchandiseService: MerchandiseService, public actRoute: ActivatedRoute, public router: Router) { }
 
@@ -24,8 +24,15 @@ export class AddMerchandiseComponent implements OnInit {
   }
 
    saveMerchandise() {
+    this.MerchandiseService.findByName(this.merchandise.productName).subscribe(data => {
+
+      if(data == null){
       this.MerchandiseService.create(this.merchandise).subscribe(data => {
         this.router.navigate(['/merchandise'])
       })
+    }else{
+      window.alert('Registro ya existe');
+    }
+    })
   }
 }

@@ -34,9 +34,9 @@
                         <td>{{merchandise.idUser.name}}</td>
                         <td>{{merchandise.idUser.idAppointment.description}}</td>
                         <td>{{merchandise.idUser.age}}</td>
-                        <td>{{merchandise.idUser.admissionDate| date:'M/d/yy, h:mm a'}}</td>
-                        <td>{{merchandise.admissionDate | date:'M/d/yy, h:mm a'}}</td>
-                        <td>{{merchandise.modificationDate| date:'M/d/yy, h:mm a'}}</td>
+                        <td>{{merchandise.idUser.admissionDate| date:'M/dd/yyyy'}}</td>
+                        <td>{{merchandise.admissionDate | date:'M/dd/yyyy'}}</td>
+                        <td>{{merchandise.modificationDate| date:'M/dd/yyyy'}}</td>
                         <td>
                             <a [routerLink]="['edit-merchandise', merchandise]" [state]=merchandise class="edit" title="Edita" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                             <a (click)="deleteMerchandise(merchandise)" class="delete" title="Eliminar" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
