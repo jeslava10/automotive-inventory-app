@@ -1,0 +1,27 @@
+<div class="container custom-container">
+    <div class="col-md-12">
+        <div class="row">
+            <h3 class="mb-3 text-center">Crear Producto</h3>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Nombre Producto</label>
+            <input type="text" [(ngModel)]="merchandise.productName" aria-describedby="Obligatorio" class="form-control" placeholder="Nombre">
+            <div class="input-group-prepend">
+                <span *ngIf="!merchandise.productName" class="input-group-text alert-danger" id="Obligatorio" >Obligatorio</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Cantidad</label>
+            <input type="number" [(ngModel)]="merchandise.amount" aria-describedby="Obligatorio" class="form-control" placeholder="Cantidad">
+            <div class="input-group-prepend">
+                <span *ngIf="!merchandise.amount" class="input-group-text alert-danger" id="Obligatorio" >Obligatorio</span>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <button style="margin-right:10px"  *ngIf="merchandise.productName && merchandise.amount" class="btn btn-success btn-sm btn-block" (click)="saveMerchandise()">Crear</button>
+            <button class="btn btn-success btn-sm btn-block" [routerLink]="['']">Volver</button>
+        </div>
+    </div>
+</div>
